@@ -1,0 +1,244 @@
+<html>
+<head>
+	<title>IMDb - Movies, TV and Celebrities</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" type="image/png" href="images/IMDb-Icon.png"/>
+<!-- Kamaldeep -->	
+	<script type="text/javascript" src="js/rating.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/rating.css">
+	<script type="text/javascript">
+		//obj = {"Movies":{"Double_Seat":[],"Hit":[],"MI":[],"Manjhi":[],"Phantom":[],"She":[],"Tu_Hi_Re":[],"Welcome_Back":[]}};
+			
+			function loadOld(varH,varMI,varM,varS)
+				{
+					var val=0;
+					var obj = JSON.parse(localStorage.getItem('Rating'));
+					
+					var valsH = obj.Movies[varH];
+					var valsMI = obj.Movies[varMI];
+					var valsM = obj.Movies[varM];
+					var valsS = obj.Movies[varS];
+
+					var objR = JSON.parse(localStorage.getItem('comm'));
+
+
+					//Hit
+					document.getElementById('rH').innerHTML = "";
+					for(index in valsH)
+						{
+							val += parseInt(valsH[index]);
+							//document.getElementById('r').innerHTML += vals[index]+" ";
+						}
+
+					val = parseInt(val/(valsH.length));
+					if(!isNaN(val))
+						{
+							document.getElementById('rH').innerHTML += 'Rating: <b class="rat_no">'+val+'</b> /5 from '+valsH.length+' user';
+							document.getElementById('starH'+val).checked = true;
+						}
+
+					document.getElementById('review_noH').innerHTML = 'Reviews: <b class="disp_rat_1">'+objR.comment[varH].title.length+'</b> users';
+
+					//MI
+					document.getElementById('rMI').innerHTML = "";
+					for(index in valsMI)
+						{
+							val += parseInt(valsMI[index]);
+							//document.getElementById('r').innerHTML += vals[index]+" ";
+						}
+
+					val = parseInt(val/(valsMI.length));
+					if(!isNaN(val))
+						{
+							document.getElementById('rMI').innerHTML += 'Rating: <b class="rat_no">'+val+'</b> /5 from '+valsMI.length+' user';
+							document.getElementById('starMI'+val).checked = true;
+						}
+
+					document.getElementById('review_noMI').innerHTML = 'Reviews: <b class="disp_rat_1">'+objR.comment[varMI].title.length+'</b> users';
+
+					//Manjhi
+					document.getElementById('rM').innerHTML = "";
+					for(index in valsM)
+						{
+							val += parseInt(valsM[index]);
+							//document.getElementById('r').innerHTML += vals[index]+" ";
+						}
+
+					val = parseInt(val/(valsM.length));
+					if(!isNaN(val))
+						{
+							document.getElementById('rM').innerHTML += 'Rating: <b class="rat_no">'+val+'</b> /5 from '+valsM.length+' user';
+							document.getElementById('starM'+val).checked = true;
+						}
+
+					document.getElementById('review_noM').innerHTML = 'Reviews: <b class="disp_rat_1">'+objR.comment[varM].title.length+'</b> users';
+
+					//She
+					document.getElementById('rS').innerHTML = "";
+					for(index in valsS)
+						{
+							val += parseInt(valsS[index]);
+							//document.getElementById('r').innerHTML += vals[index]+" ";
+						}
+
+					val = parseInt(val/(valsS.length));
+					if(!isNaN(val))
+						{
+							document.getElementById('rS').innerHTML += 'Rating: <b class="rat_no">'+val+'</b> /5 from '+valsS.length+' user';
+							document.getElementById('starS'+val).checked = true;
+						}
+
+					document.getElementById('review_noS').innerHTML = 'Reviews: <b class="disp_rat_1">'+objR.comment[varS].title.length+'</b> users';
+				}
+	</script>
+
+<!-- Kamaldeep -->
+</head>
+<body onload="loadOld('Hit','MI','Manjhi','She')">
+<div class="wrapper">
+	<div class="head">
+	</div>
+	<div class="sub_wrap">
+		<div class="sub_wrap_img">
+			<a href="index.html"><img src="images/IMDb-Icon.png" width="100px" height="80px"></a>
+		</div>
+		<div class="sub_wrap_search">
+			<input type="text" class="text_box_srch" placeholder=" Find Movies, TV Showes, Celebrites and more.. ">
+		</div>
+		<div class="srch_btn"><p class="btn_txt">Search</p></div>
+		<div class="pro">
+			<img src="images/imdbpro_logo_nb-720143162._CB306318304_.png" width="65px" height="20px">
+		</div>
+		<div class="side_pro"><p>Home</p></div>
+		<div class="sitemap"><p>Site Map</p></div>
+		<div class="list">
+			<ul>
+				<li>Movies, TV & Shows</li>
+				<li>Celebs and Events</li>
+				<li>News and Community</li>
+				<li>Watch List</li>
+			</ul>
+		</div>
+		<div class="login"><p>Login</p></div>
+	</div>
+	<div class="sub_wrap_vid">
+		<div class="vid">
+			<div id="vid1" class="vid1">
+				<video width="200pxpx" height="300px" controls class="vid_1" poster="images/batman-superman.jpg">
+				<source src="images/batman-superman.MKV" type="video/mp4">
+				<source src="images/Transformers 4 Trailer (MobLoft.In) HD.ogg" type="video/ogg">
+			</div>
+			<div id="vid2" class="vid2">
+				<video width="200pxpx" height="300px" controls class="vid_1" class="vid_1" poster="images/spectre.jpg">
+				<source src="images/spectre.MKV" type="video/mp4">
+			</div>
+			<div id="vid3" class="vid3">
+				<video width="200pxpx" height="300px" controls class="vid_1" class="vid_1" poster="images/minions.jpg">
+				<source src="images/minions.MKV" type="video/mp4">
+			</div>
+		</div>
+		<div class="opeaning">
+			<p class="sub_opn">Opening This Week</p>
+			<div class="sub_sub_opn">
+				<ul class="u_list">
+					<div class="icn"><li class="list_1">The Transporter Refuled</li></div>
+					<div class="icn"><li class="list_1">A Walk in the Woods</li></div>
+					<div class="icn"><li class="list_1">Before We Go</li></div>
+					<div class="icn"><li class="list_1">Spector</li></div>
+					<div class="icn"><li class="list_1">Mission Impossible 5</li></div>
+					<div class="icn"><li class="list_1">Fantastic Four</li></div>
+				</ul>
+				<div class="open"><p>See More Opening this week</p> <p class="sign">&gt&gt</p></div>
+			</div>
+		</div>
+	</div>
+	<div class="news"><h2 class="news_1">Latest News</h2>
+		<div class="sub_news_img"><img src="images/index.jpg" width="100px" height="150px" class="news_img"></div>
+		<p class="news_txt">Box Office: 'War Room' Ediging ' Strainght Outta Compton' Over Slow Weekend</p>
+		<div class="news_tym">1 hour ago</div><p class="news_txt_2">Variety- Film News</p>
+		<div><p class="big_txt">Sony's faith-based drama "War Room" has the edge on N.M. A. biopic "Straight Outta Compton" with $9.3 million to lead the modest U. S. box office over the Friday-Sunday weekend. "Straight Outta Compton" took in $8.9 million at 3094 locations in its fourth weekend, ending its impressive three-weel...</p>  <p class="sm">See more &gt&gt </p></div>
+		<div><p class="mn">See More News</p></div>
+	</div>
+	<div class="snapshots">
+	<div class="s1"><p>IMDb Snapshots- Photos We Love</p></div>
+	<div style="float: left; width:100%;">
+		<div class="img1"><a href="app/HM7.html"><img src="images/hitman-agent-47-movie-poster-hd.jpg" width="210px" height="250px;" class="image1"></a>
+			<div class="detail">
+				<pre class="mvi">Hitman Agent 47
+		</pre><p id="rH" class="rat_main"></p>
+		<p id="review_noH" class="review1"></p>
+	<div class="rating_main">
+	    <input type="radio" id="starH5" name="rating_mainH" value="5" disabled="true" /><label for="starH5" title="Rocks!">&#9733;</label>
+	    <input type="radio" id="starH4" name="rating_mainH" value="4" disabled="true" /><label for="starH4" title="Pretty good">&#9733;</label>
+	    <input type="radio" id="starH3" name="rating_mainH" value="3" disabled="true" /><label for="starH3" title="Good">&#9733;</label>
+	    <input type="radio" id="starH2" name="rating_mainH" value="2" disabled="true" /><label for="starH2" title="Bad">&#9733;</label>
+	    <input type="radio" id="starH1" name="rating_mainH" value="1" disabled="true" /><label for="starH1" title="Very bad">&#9733;</label>
+	</div>
+
+				
+			</div>
+		</div>
+		<div class="img1"><a href="app/MI5.html"><img src="images/mission-impossible-rogue-nation-poster-tom-cruise.jpg" width="210px" height="250px;" class="image1"></a>
+			<div class="detail">
+				<pre class="mvi">Mission Impossible Rogue Nation
+				</pre><p id="rMI" class="rat_main"></p>
+<p id="review_noMI" class="review1"></p>
+	<div class="rating_main">
+	    <input type="radio" id="starMI5" name="rating_mainMI" value="5" disabled="true" /><label for="starMI5" title="Rocks!">&#9733;</label>
+	    <input type="radio" id="starMI4" name="rating_mainMI" value="4" disabled="true" /><label for="starMI4" title="Pretty good">&#9733;</label>
+	    <input type="radio" id="starMI3" name="rating_mainMI" value="3" disabled="true" /><label for="starMI3" title="Good">&#9733;</label>
+	    <input type="radio" id="starMI2" name="rating_mainMI" value="2" disabled="true" /><label for="starMI2" title="Bad">&#9733;</label>
+	    <input type="radio" id="starMI1" name="rating_mainMI" value="1" disabled="true" /><label for="starMI1" title="Very bad">&#9733;</label>
+	</div>
+			</div>
+		</div>
+		<div class="img1"><a href="app/Manjhi1.html"><img src="images/Manjhi-The-Mountain-Man-Movie-Poster.jpg" width="210px" height="250px;" class="image1"></a>
+			<div class="detail">
+				<pre class="mvi">Manjhi- The Mountain Man
+				</pre><p id="rM" class="rat_main"></p>
+<p id="review_noM" class="review1"></p>
+	<div class="rating_main">
+	    <input type="radio" id="starM5" name="rating_mainM" value="5" disabled="true" /><label for="starM5" title="Rocks!">&#9733;</label>
+	    <input type="radio" id="starM4" name="rating_mainM" value="4" disabled="true" /><label for="starM4" title="Pretty good">&#9733;</label>
+	    <input type="radio" id="starM3" name="rating_mainM" value="3" disabled="true" /><label for="starM3" title="Good">&#9733;</label>
+	    <input type="radio" id="starM2" name="rating_mainM" value="2" disabled="true" /><label for="starM2" title="Bad">&#9733;</label>
+	    <input type="radio" id="starM1" name="rating_mainM" value="1" disabled="true" /><label for="starM1" title="Very bad">&#9733;</label>
+	</div>
+			</div>
+		</div>
+		<div class="img1"><a href="app/sftw.html"><img src="images/Shes-Funny-That-Way-UK-Quad-Poster.jpg" width="210px" height="250px;" class="image1"></a>
+			<div class="detail">
+				<pre class="mvi">Shes Funny That Way
+				</pre><p id="rS" class="rat_main"></p>
+<p id="review_noS" class="review1"></p>
+	<div class="rating_main">
+	    <input type="radio" id="starS5" name="rating_mainS" value="5" disabled="true" /><label for="starS5" title="Rocks!">&#9733;</label>
+	    <input type="radio" id="starS4" name="rating_mainS" value="4" disabled="true" /><label for="starS4" title="Pretty good">&#9733;</label>
+	    <input type="radio" id="starS3" name="rating_mainS" value="3" disabled="true" /><label for="starS3" title="Good">&#9733;</label>
+	    <input type="radio" id="starS2" name="rating_mainS" value="2" disabled="true" /><label for="starS2" title="Bad">&#9733;</label>
+	    <input type="radio" id="starS1" name="rating_mainS" value="1" disabled="true" /><label for="starS1" title="Very bad">&#9733;</label>
+	</div>
+			</div>
+		</div>
+	</div>
+		<!--<div class="img1"><img src="images/Welcome-Back-Official-Poster.jpg" width="150px" height="250px;" class="image5"></div>-->
+		<div class="see_gallery"><a href="app/snapshot.html" class="sg"><p>See Full Gallery</p></a></div>
+	</div>
+	<div class="slider">
+	<div><p class="um">Upcoming Movies</p></div>
+		<div class="sub_slider">
+			<iframe src="app/wowslider.html" style="width:1000px;height:550px;max-width:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer_1"><p class="adj">An</p><img src="images/amazon-logo-100050373-gallery.png" width="50px" height="30px;" class="img"><p class="name"> company</p></div>
+		<div class="cpy_right"><p class="n1">Copyright &copy</p>
+		<p class="n2">1990-2015</p><p class="n3">IMDb.com.Inc</p></div>
+		<div class="div_1"><p class="b1">Amazon Affilliates</p><p class="b2">Amazon Instant Video</p><p class="b3">Watch movies & online TV</p></div>
+		<div class="div_2"><p class="c1">Amazon Germany</p><p class="c2">Buy Movie on DVD & BlueRAy </p></div>
+		<div class="div_3"><p class="c1">Amazon India</p><p class="c2">Buy Movie on DVD & BlueRAy </p></div>
+		<div class="div_4"><p class="c1">Amazon France</p><p class="c2">Buy Movie on DVD & BlueRAy </p></div>
+	</div>
+</div>
+</body>
+</html>

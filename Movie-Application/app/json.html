@@ -1,0 +1,43 @@
+
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+     //localStorage.clear();
+	//var obj = {"emp":[]};
+  	//localStorage.setItem("name",JSON.stringify(obj));
+	
+	function display(){
+		
+		var i;
+		var res = "";
+		var obj = JSON.parse(localStorage.getItem('name'));
+		for(i=0;i<obj.emp.length;i++)
+		{
+			if(obj.emp[i] != 'undefined')	
+			res += obj.emp[i].FirstName+"<br>";
+						
+		}
+		
+		document.getElementById('reve').innerHTML = res;
+		
+	}
+
+	function add(){
+	
+		var obj = JSON.parse(localStorage.getItem('name'));
+		obj.emp.push({"FirstName":document.getElementById("name1").value});
+		localStorage.setItem('name',JSON.stringify(obj));
+	}
+	</script>
+</head>
+<body>
+
+Name: <input type="text" id="name1"><br>
+
+<input type="button" value="submit" onclick=add()>
+<input type="button" value="display" onclick="display()">
+<div style="border:1px solid black; height:200px; width:200px">
+<p id="reve" ></p>
+</div>
+</body>
